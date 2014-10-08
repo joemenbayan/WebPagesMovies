@@ -1,0 +1,39 @@
+﻿@{
+    var a = 4;
+    var b = 5;
+    var theSum = a + b;
+    
+    var technology = "ASP.NET";
+    var product = "Web Pages"; 
+    
+    var rightNow = DateTime.Now;   
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Testing Razor Syntax</title>
+    </head>
+    <body>
+        <div>
+            <h1>Testing Razor Syntax</h1>
+            <p>The value of a is @a</p>
+            <p>The value of b is @b</p>
+            <p>The sum of the two variable a and b is @theSum</p>
+            <p>The difference betwee the two variable is @(a - b)</p>
+            <p>The product of the two variable a and b is @(a * b)</p>
+            <p>The dividend of the two variable a and b is @(a / b)</p>
+        </div>
+        <div>
+            <p>The Technology that we have right now is @technology and the available product is @product</p>
+            <p>This technology and product that we have now is also known as @(technology + " " + @product) </p>
+        </div>
+        <div>
+            <p>The current date and time is @rightNow</p>
+            <p>You may try to visit this page again soon by typing the following url address: @Request.Url</p>
+        </div>
+
+    </body>
+</html>

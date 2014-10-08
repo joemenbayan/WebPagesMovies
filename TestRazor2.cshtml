@@ -1,0 +1,39 @@
+﻿@{
+    var message = "This is the first time you have requested the page";
+
+    if (IsPost) {
+        message = "Now You've submitted this page";
+    }
+
+    var showMessage = false;
+    if (Request.QueryString["show"].AsBool() == true) {
+        showMessage = true;
+    }
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Test Razor Part 2</title>
+    </head>
+    <body>
+        <h1>Test Razor Part 2</h1>
+        <p>
+            @if (IsPost) {
+                <p>You submitted the page @DateTime.Now</p>
+            }
+        </p>
+        <form method="post">
+            <div>
+                <p>
+                    @if (showMessage) {
+                       @message
+                    }
+                </p>
+                <p><input type="submit" value="Submit" /></p>
+            </div>
+        </form>
+    </body>
+</html>
